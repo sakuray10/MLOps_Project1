@@ -60,7 +60,7 @@ out = v.draw_instance_predictions(outputs["instances"].to("cpu"))
 cv2.imshow("out", out.get_image()[:, :, ::-1])
 
 # waits for user to press any key
-# (this is necessary to avoid Python kernel form crashing)
+# (this is necessary to avoid Python kernel form crashing) 
 cv2.waitKey(0)
 
   
