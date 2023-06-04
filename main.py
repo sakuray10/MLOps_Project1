@@ -26,10 +26,13 @@ from detectron2.config import get_cfg
 from detectron2.utils.visualizer import Visualizer
 from detectron2.data import MetadataCatalog, DatasetCatalog
 
-def detectron(input_img):
+def detectron(input_img, output_fn):
 
-    # im = cv2.imread("./input.jpg")
-    im = cv2.imread(input_img)
+    try:
+        im = cv2.imread(input_img)
+    except:
+        print("Please enter a valid image name")
+        exit()
 
     '''
     # Window name in which image is displayed
@@ -62,19 +65,15 @@ def detectron(input_img):
     out = v.draw_instance_predictions(outputs["instances"].to("cpu"))
 
     output_img = out.get_image()[:, :, ::-1]
+
     # cv2.imshow("out", output_img)
-
-    # # waits for user to press any key
-    # # (this is necessary to avoid Python kernel form crashing) 
     # cv2.waitKey(0)
-
-    
-    # # closing all open windows
     # cv2.destroyAllWindows()
 
     # Saving the image
-    cv2.imwrite("out.jpg", output_img)
+    
+    cv2.imwrite(output_fn, output_img)
 
     return output_img
 
-detectron("input.jpg")
+detectron("cooking.jpeg", "out.jpg")
