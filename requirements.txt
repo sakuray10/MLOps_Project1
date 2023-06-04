@@ -1,5 +1,5 @@
-# detectron2==0.6
-detectron2
+detectron2==0.6
+# detectron2
 numpy==1.21.5
 opencv_python==4.7.0.72
 torch==2.0.1
