@@ -1,5 +1,6 @@
 install:
 	pip install --upgrade pip &&\
+		pip install -r pre-reqs.txt
 		pip install 'git+https://github.com/facebookresearch/detectron2.git' &&\
 		pip install -r requirements.txt
 
