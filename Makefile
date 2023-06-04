@@ -5,10 +5,10 @@ install:
 		# pip install 'git+https://github.com/facebookresearch/detectron2.git' #install detectron2
 
 lint:
-	pylint --disable=R,C hello.py
+	pylint --disable=R,C main.py
 
 test:
-	python -m pytest -vv --cov=hello test_hello.py
+	python -m pytest -vv --cov=main test_main.py
 
 run:
 	python main.py
