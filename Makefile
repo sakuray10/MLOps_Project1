@@ -1,6 +1,7 @@
 install:
 	pip install --upgrade pip &&\
-		pip install -r pre-reqs.txt
+		pip install -r pre-reqs.txt &&\
+		pip install pytest-cov &&\
 		pip install 'git+https://github.com/facebookresearch/detectron2.git' &&\
 		pip install -r requirements.txt
 
